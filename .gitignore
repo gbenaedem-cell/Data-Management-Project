@@ -1,0 +1,33 @@
+# Backup files
+*.bak
+
+# Secrets
+.env
+*.pem
+*.key
+
+# Python environments and cache
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Database and Terraform state
+*.db
+*.sqlite
+terraform.tfstate
+terraform.tfstate.*
+
+# Editor and Windows files
+.vscode/
+Thumbs.db
+.DS_Store
+
+# Large raw datasets
+data/raw/
+
+# Original downloaded OULAD dataset
+open+university+learning+analytics+dataset*/
+
+# Dataset copy used by the ETL scripts
+OULAD_Task6_ETL/data/

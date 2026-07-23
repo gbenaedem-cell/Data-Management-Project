@@ -1,0 +1,19 @@
+﻿log_id,pipeline_stage,source_file,target_table,row_count,duration_seconds,status,message,logged_at
+1,staging_load,courses.csv,stg_courses,22,0.07,SUCCESS,Row count matched the expected source count.,2026-07-21 11:50:17
+2,staging_load,assessments.csv,stg_assessments,206,0.04,SUCCESS,Row count matched the expected source count.,2026-07-21 11:50:17
+3,staging_load,vle.csv,stg_vle,6364,0.08,SUCCESS,Row count matched the expected source count.,2026-07-21 11:50:17
+4,staging_load,studentInfo.csv,stg_student_info,32593,0.45,SUCCESS,Row count matched the expected source count.,2026-07-21 11:50:18
+5,staging_load,studentRegistration.csv,stg_student_registration,32593,0.40,SUCCESS,Row count matched the expected source count.,2026-07-21 11:50:18
+6,staging_load,studentAssessment.csv,stg_student_assessment,173912,1.70,SUCCESS,Row count matched the expected source count.,2026-07-21 11:50:20
+7,staging_load,studentVle.csv,stg_student_vle,10655280,142.92,SUCCESS,Row count matched the expected source count.,2026-07-21 11:52:43
+8,clean_transform,,clean_module_presentation,22,0.01,SUCCESS,Typed transformation completed and expected row count matched.,2026-07-21 11:59:41
+9,clean_transform,,clean_student,28785,0.77,SUCCESS,Typed transformation completed and expected row count matched.,2026-07-21 11:59:42
+10,clean_transform,,clean_registration,32593,1.67,SUCCESS,Typed transformation completed and expected row count matched.,2026-07-21 11:59:44
+11,clean_transform,,clean_assessment,206,0.01,SUCCESS,Typed transformation completed and expected row count matched.,2026-07-21 11:59:44
+12,clean_transform,,clean_vle_resource,6364,0.12,SUCCESS,Typed transformation completed and expected row count matched.,2026-07-21 11:59:44
+13,clean_transform,,clean_student_assessment,173912,7.41,SUCCESS,Typed transformation completed and expected row count matched.,2026-07-21 11:59:51
+14,clean_transform,,clean_student_vle_interaction,8459320,248.22,SUCCESS,"2,195,960 repeated raw daily-grain rows were consolidated.",2026-07-21 12:05:25
+15,analytics_build,,analytics_student_engagement,32593,78.74,SUCCESS,Analytics table created and validated.,2026-07-21 12:28:40
+16,analytics_build,,analytics_completion_by_presentation,22,0.18,SUCCESS,Analytics table created and validated.,2026-07-21 12:28:41
+17,analytics_build,,analytics_assessment_performance,57,0.82,SUCCESS,Analytics table created and validated.,2026-07-21 12:28:41
+18,analytics_build,,analytics_engagement_by_result,4,0.11,SUCCESS,Analytics table created and validated.,2026-07-21 12:28:42

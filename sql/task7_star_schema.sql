@@ -31,7 +31,11 @@ FROM oulad_etl.analytics_student_engagement;
 
 
 
+CREATE DATABASE IF NOT EXISTS oulad_dw;
 USE oulad_dw;
+
+-- Drop the fact table first when rerunning the script
+DROP TABLE IF EXISTS fact_learning_engagement;
 
 SELECT DATABASE() AS selected_database;
 
@@ -307,7 +311,8 @@ ORDER BY outcome_order;
 
 USE oulad_dw;
 
-DROP TABLE IF EXISTS fact_learning_engagement;
+SELECT COUNT(*) AS fact_rows_before_loading
+FROM fact_learning_engagement;
 
 CREATE TABLE fact_learning_engagement (
     engagement_fact_key BIGINT NOT NULL AUTO_INCREMENT,
@@ -440,7 +445,7 @@ JOIN oulad_dw.dim_age_band AS dab
 
 JOIN oulad_dw.dim_outcome AS dout
     ON dout.final_result = r.final_result;
-FROM fact_learning_engagement;
+
 
 SELECT
     COUNT(*) AS fact_rows,
@@ -512,3 +517,18 @@ JOIN dim_outcome AS dout
 
 ORDER BY f.engagement_fact_key
 LIMIT 20;
+
+
+
+
+USE oulad_dw;
+
+SELECT * FROM dim_student LIMIT 20;
+
+SELECT * FROM dim_module_presentation LIMIT 20;
+
+SELECT * FROM dim_age_band;
+
+SELECT * FROM dim_outcome;
+
+SELECT * FROM fact_learning_engagement LIMIT 20;
